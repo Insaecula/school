@@ -1,12 +1,10 @@
 package ru.hogwarts.school.controller;
-
 import model.Faculty;
 import model.Student;
 import service.StudentService;
 
 import java.util.List;
 
-@RestController
 @RequestMapping("/student")
 public class StudentController {
 

@@ -2,12 +2,14 @@ package ru.hogwarts.school.controller;
 
 import model.Faculty;
 import model.Student;
+import ru.hogwarts.school.service.FacultyService;
 
 import java.util.List;
 
 public class FacultyController {
     @GetMapping("/filter")
     public List<Faculty> getFacultyByNameOrColor(@RequestParam String value) {
+         facultyService;
         return facultyService.findByNameOrColorIgnoreCase(value);
     }
 
