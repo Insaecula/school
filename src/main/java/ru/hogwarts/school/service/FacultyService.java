@@ -1,5 +1,6 @@
 package ru.hogwarts.school.service;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import model.faculty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,9 +15,11 @@ import java.util.Optional;
 @Service
 public class FacultyService {
 
-    private final FacultyRepository facultyRepository;
-
-    @Autowired
+    private static final Logger logger = LoggerFactory.getLogger(FacultyService.class);
+    public List<Faculty> findByNameOrColorIgnoreCase(String value) {
+        logger.info("Вызван метод findByNameOrColorIgnoreCase с параметром: {}", value);
+        @Autowired
+    }
     public FacultyService(FacultyRepository facultyRepository) {
         this.facultyRepository = facultyRepository;
     }
