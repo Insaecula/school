@@ -1,8 +1,11 @@
 package ru.hogwarts.school.controller;
 
-import model.Faculty;
-import model.Student;
-import service.StudentService;
+
+
+import org.springframework.web.bind.annotation.*;
+import ru.hogwarts.school.model.Faculty;
+import ru.hogwarts.school.model.Student;
+import ru.hogwarts.school.service.StudentService;
 
 import java.util.List;
 

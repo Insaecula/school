@@ -1,5 +1,7 @@
 package ru.hogwarts.school.model;
 
+import jakarta.persistence.*;
+
 import java.util.List;
 
 @Entity
@@ -9,6 +11,9 @@ public class Faculty {
     private Long id;
     private String name;
     private String color;
+
+    @OneToMany(mappedBy = "faculty")
+    private List<Student> students;
 
     public Long getId() {
         return id;
@@ -34,6 +39,11 @@ public class Faculty {
         this.color = color;
     }
 
-    @OneToMany(mappedBy = "faculty")
-    private List<Student> students;
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
+    }
 }
