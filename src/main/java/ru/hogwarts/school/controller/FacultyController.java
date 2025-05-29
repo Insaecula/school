@@ -7,10 +7,10 @@ import ru.hogwarts.school.service.FacultyService;
 import java.util.List;
 @RestController
 @RequestMapping("/faculty")
-public class FacultyController {
+public class  FacultyController {
     private final FacultyService facultyService;
 
-    public FacultyController(FacultyService facultyService) {
+    public  FacultyController(FacultyService facultyService) {
         this.facultyService = facultyService;
     }
 
