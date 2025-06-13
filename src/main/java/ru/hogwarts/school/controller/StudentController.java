@@ -23,9 +23,13 @@ public class StudentController {
     public List<Student> getStudentsByAgeRange(@RequestParam int min, @RequestParam int max) {
         return studentService.findByAgeRange(min, max);
     }
+    @GetMapping("/print-parallel")
+    public void printParallel() {
+        studentService.printStudentsInParallel();
+    }
 
-    @GetMapping("/{id}/faculty")
-    public Faculty getFacultyOfStudent(@PathVariable Long id) {
-         return studentService.getFacultyByStudentId(id);
+    @GetMapping("/print-synchronized")
+    public void printSynchronized() {
+        studentService.printStudentsSynchronized();
     }
 }
