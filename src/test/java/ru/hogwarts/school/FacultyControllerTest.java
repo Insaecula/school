@@ -25,7 +25,7 @@ class FacultyControllerTest {
     void create_get_update_minimal() {
 
         var created = rest.postForEntity(U("/faculties"),
-                new Faculty(null, "Gryffindor", "red"), Faculty.class);
+                new Faculty(), Faculty.class);
         assertThat(created.getStatusCode()).isIn(HttpStatus.OK, HttpStatus.CREATED);
         var id = created.getBody().getId();
 
@@ -35,7 +35,7 @@ class FacultyControllerTest {
         assertThat(got.getBody().getName()).isEqualTo("Gryffindor");
 
 
-        rest.put(U("/faculties/"+id), new Faculty(id, "NewName", "red"));
+        rest.put(U("/faculties/"+id), new Faculty());
         var after = rest.getForEntity(U("/faculties/"+id), Faculty.class);
         assertThat(after.getBody().getName()).isEqualTo("NewName");
     }
